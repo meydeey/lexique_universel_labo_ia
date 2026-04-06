@@ -1,0 +1,108 @@
+[
+  {
+    "slug": "api-rest",
+    "label": "API REST",
+    "niveau": "intermédiaire",
+    "domaine": "backend",
+    "definition": "Une API REST (Representational State Transfer) est une interface qui permet à deux systèmes de communiquer via HTTP en utilisant des endpoints standardisés. Elle est au cœur de la plupart des automatisations modernes : n8n, les agents IA et les webhooks l'utilisent en permanence. Chaque requête est indépendante et contient toutes les informations nécessaires à son traitement.",
+    "exemple_code": "GET https://api.example.com/users/42\nAuthorization: Bearer <token>",
+    "langue_code": "http",
+    "termes_lies": ["endpoint", "webhook", "json"],
+    "statut": "publié"
+  },
+  {
+    "slug": "endpoint",
+    "label": "Endpoint",
+    "niveau": "intermédiaire",
+    "domaine": "backend",
+    "definition": "Un endpoint est une URL spécifique exposée par une API REST pour effectuer une action précise (récupérer des données, créer un enregistrement, déclencher un workflow). Dans n8n, chaque nœud HTTP Node cible un endpoint. La combinaison méthode HTTP + URL définit ce qu'on peut faire.",
+    "exemple_code": "POST /api/workflows/trigger\nGET  /api/terms/:slug",
+    "langue_code": "http",
+    "termes_lies": ["api-rest", "webhook"],
+    "statut": "publié"
+  },
+  {
+    "slug": "webhook",
+    "label": "Webhook",
+    "niveau": "intermédiaire",
+    "domaine": "workflow",
+    "definition": "Un webhook est un endpoint HTTP que tu exposes pour recevoir des événements en temps réel depuis un service externe. Contrairement à un polling qui interroge régulièrement, le webhook est déclenché par l'événement lui-même — c'est plus efficace. Dans n8n, le nœud Webhook crée automatiquement cette URL.",
+    "exemple_code": "// Payload reçu depuis Stripe\n{\n  \"event\": \"payment.completed\",\n  \"amount\": 4900,\n  \"currency\": \"eur\"\n}",
+    "langue_code": "json",
+    "termes_lies": ["trigger", "workflow", "api-rest", "n8n"],
+    "statut": "publié"
+  },
+  {
+    "slug": "json",
+    "label": "JSON",
+    "niveau": "débutant",
+    "domaine": "backend",
+    "definition": "JSON (JavaScript Object Notation) est le format universel d'échange de données sur le web. Il représente des données structurées sous forme de paires clé-valeur, de tableaux et d'objets imbriqués. Tous les outils d'automatisation et d'IA — n8n, Claude, les APIs — communiquent en JSON.",
+    "exemple_code": "{\n  \"nom\": \"Claude\",\n  \"type\": \"agent IA\",\n  \"actif\": true,\n  \"capacites\": [\"code\", \"analyse\", \"rédaction\"]\n}",
+    "langue_code": "json",
+    "termes_lies": ["api-rest", "webhook"],
+    "statut": "publié"
+  },
+  {
+    "slug": "n8n",
+    "label": "n8n",
+    "niveau": "débutant",
+    "domaine": "workflow",
+    "definition": "n8n est une plateforme d'automatisation open-source qui connecte des applications et des APIs sans écrire de backend. Tu construis des workflows visuels avec des nœuds, chaque nœud étant une action (HTTP, base de données, IA). Il supporte l'auto-hébergement, ce qui le distingue de Zapier ou Make.",
+    "lien_externe": "https://n8n.io",
+    "termes_lies": ["workflow", "trigger", "webhook"],
+    "statut": "publié"
+  },
+  {
+    "slug": "trigger",
+    "label": "Trigger",
+    "niveau": "débutant",
+    "domaine": "workflow",
+    "definition": "Un trigger (déclencheur) est l'événement qui lance l'exécution d'un workflow. Il peut être temporel (cron), basé sur un événement (webhook, email reçu) ou manuel. Dans n8n, chaque workflow commence obligatoirement par un nœud trigger — sans lui, rien ne s'exécute.",
+    "termes_lies": ["workflow", "webhook", "n8n"],
+    "statut": "publié"
+  },
+  {
+    "slug": "workflow",
+    "label": "Workflow",
+    "niveau": "débutant",
+    "domaine": "workflow",
+    "definition": "Un workflow est une séquence d'étapes automatisées qui transforment un événement déclencheur en résultat concret. Dans n8n, un workflow est un graphe de nœuds connectés : chaque nœud reçoit des données, les traite, et les passe au suivant. Un bon workflow remplace des heures de travail manuel répétitif.",
+    "termes_lies": ["trigger", "n8n", "webhook"],
+    "statut": "publié"
+  },
+  {
+    "slug": "composant-react",
+    "label": "Composant React",
+    "niveau": "intermédiaire",
+    "domaine": "frontend",
+    "definition": "Un composant React est une fonction JavaScript qui retourne du JSX — l'unité de base de toute interface React et Next.js. Il encapsule UI, logique et état dans un bloc réutilisable. Les Server Components de Next.js 14+ s'exécutent côté serveur sans JavaScript côté client, ce qui améliore les performances.",
+    "exemple_code": "export function Badge({ label }: { label: string }) {\n  return (\n    <span className=\"px-2 py-1 rounded text-sm bg-accent\">\n      {label}\n    </span>\n  );\n}",
+    "langue_code": "tsx",
+    "lien_externe": "https://react.dev",
+    "termes_lies": ["jsx", "props"],
+    "statut": "publié"
+  },
+  {
+    "slug": "props",
+    "label": "Props",
+    "niveau": "débutant",
+    "domaine": "frontend",
+    "definition": "Les props (propriétés) sont les paramètres qu'on passe à un composant React depuis son parent. Elles rendent le composant configurable et réutilisable — comme les arguments d'une fonction. En TypeScript, on les type avec une interface pour avoir l'autocomplétion et éviter les erreurs.",
+    "exemple_code": "interface CardProps {\n  titre: string;\n  description: string;\n  niveau: \"débutant\" | \"intermédiaire\" | \"avancé\";\n}\n\nexport function Card({ titre, description, niveau }: CardProps) {\n  return <div>{titre}</div>;\n}",
+    "langue_code": "tsx",
+    "termes_lies": ["composant-react", "jsx"],
+    "statut": "publié"
+  },
+  {
+    "slug": "jsx",
+    "label": "JSX",
+    "niveau": "débutant",
+    "domaine": "frontend",
+    "definition": "JSX est une extension de syntaxe JavaScript qui permet d'écrire du HTML-like directement dans le code. React le transforme en appels `React.createElement()` à la compilation. En Next.js avec TypeScript, on utilise `.tsx` pour les fichiers contenant du JSX.",
+    "exemple_code": "// JSX compilé en JS pur\nconst element = <h1 className=\"titre\">Bonjour</h1>;\n// équivaut à :\nconst element = React.createElement(\"h1\", { className: \"titre\" }, \"Bonjour\");",
+    "langue_code": "tsx",
+    "termes_lies": ["composant-react", "props"],
+    "statut": "publié"
+  }
+]
