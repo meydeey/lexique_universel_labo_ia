@@ -7,7 +7,7 @@ export function RelatedTerms({ terms }: { terms: Terme[] }) {
 
   return (
     <div className="mt-8">
-      <h2 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
+      <h2 className="text-[10px] font-mono uppercase tracking-widest text-[var(--text-tertiary)] mb-3">
         Termes liés
       </h2>
       <div className="flex flex-wrap gap-2">
@@ -15,12 +15,12 @@ export function RelatedTerms({ terms }: { terms: Terme[] }) {
           <Link
             key={t.slug}
             href={`/terme/${t.slug}`}
-            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
+            className="group inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border)] hover:border-[var(--accent)]/30 hover:bg-[var(--bg-tertiary)] transition-all"
           >
-            <span className="text-sm font-medium text-[var(--text-primary)]">
+            <span className="text-sm text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
               {t.label}
             </span>
-            <NiveauBadge niveau={t.niveau} />
+            <NiveauBadge niveau={t.niveau} size="xs" />
           </Link>
         ))}
       </div>

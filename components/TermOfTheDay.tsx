@@ -1,34 +1,24 @@
 import Link from "next/link";
 import type { Terme } from "@/lib/types";
 import { NiveauBadge } from "./NiveauBadge";
-import { DomaineBadge } from "./DomaineBadge";
 
 export function TermOfTheDay({ term }: { term: Terme }) {
   return (
-    <div className="mb-8 p-6 rounded-xl bg-[var(--bg-secondary)] border border-[var(--accent)]/30">
-      <div className="flex items-center gap-2 mb-3">
-        <span className="text-xs font-mono text-[var(--accent)] uppercase tracking-wider">
-          Terme du jour
-        </span>
-      </div>
-      <div className="flex items-start justify-between gap-3 mb-2">
-        <h2 className="text-xl font-bold text-[var(--text-primary)]">
-          {term.label}
-        </h2>
-        <div className="flex gap-2 shrink-0">
-          <NiveauBadge niveau={term.niveau} />
-          <DomaineBadge domaine={term.domaine} />
-        </div>
-      </div>
-      <p className="text-[var(--text-secondary)] line-clamp-2 mb-4">
-        {term.definition}
-      </p>
-      <Link
-        href={`/terme/${term.slug}`}
-        className="inline-block text-sm font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
-      >
-        Voir la fiche →
-      </Link>
-    </div>
+    <Link
+      href={`/terme/${term.slug}`}
+      className="group flex items-center gap-3 px-4 py-2.5 rounded-lg bg-[var(--accent-dim)] border border-[var(--accent)]/10 hover:border-[var(--accent)]/30 transition-all"
+    >
+      <span className="shrink-0 text-[10px] font-mono text-[var(--accent)] uppercase tracking-widest">
+        Terme du jour
+      </span>
+      <span className="w-px h-4 bg-[var(--accent)]/20" />
+      <span className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate">
+        {term.label}
+      </span>
+      <NiveauBadge niveau={term.niveau} size="xs" />
+      <span className="ml-auto text-xs text-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+        →
+      </span>
+    </Link>
   );
 }
