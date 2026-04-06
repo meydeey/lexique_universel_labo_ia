@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/Header";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${manrope.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-[var(--bg-primary)] text-[var(--text-primary)] font-[family-name:var(--font-manrope)] antialiased min-h-screen">
+        <Header />
         {children}
       </body>
     </html>
