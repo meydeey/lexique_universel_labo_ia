@@ -113,7 +113,7 @@ export function CatalogueClient({ terms }: { terms: Terme[] }) {
       </div>
 
       {/* Filtres domaines */}
-      <div className="mb-6 flex flex-wrap gap-2">
+      <div className="mb-6 flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:overflow-x-visible md:pb-0">
         {DOMAINES.map((d) => (
           <button
             key={d}

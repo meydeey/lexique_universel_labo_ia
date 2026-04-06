@@ -17,3 +17,27 @@
   --niveau-avance-bg: #3b0d0d;
   --niveau-avance-text: #ef4444;
 }
+
+/* Scrollbar styling for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Code block horizontal scroll on mobile */
+pre {
+  overflow-x: auto;
+}
