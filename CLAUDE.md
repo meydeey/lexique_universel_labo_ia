@@ -44,3 +44,19 @@ Glossaire technique public de 349 termes (IA, code, automatisation). Next.js 16 
 ## Docs
 
 `docs/` — Vue d'ensemble, architecture, commandes, design system, ADRs.
+
+<!-- labo-traceability:v1 -->
+## Traçabilité permanente LABO IA / SAS
+
+Toute activité significative (code, IA, recherche, contenu, marketing, automatisation,
+documentation, décision ou opération) est suivie dans le MCP « LE LABO IA Tasks ».
+Avant de travailler : lire `~/agents-config/rules/labo-tasks-tracking.md` et
+`~/agents-config/rules/labo-traceability.md`, rechercher la carte du secteur et la reprendre
+ou la créer, puis rattacher la session. Un objectif cohérent a une carte ; ses petits gestes
+restent en checklist ou en journal. À chaque jalon : résultat, preuve, date, agent, état et
+dépendances utiles. Clôturer sur preuve et arrêter le suivi. Distinguer faits, déductions et
+inconnues ; préserver les dates historiques et éviter les doublons. Aucun secret, historique
+brut, donnée client ou information confidentielle dans les résumés envoyés. MCP indisponible :
+conserver les jalons filtrés localement et les synchroniser après rapprochement au retour.
+Pour un nouveau dépôt associé : `python3 ~/agents-config/scripts/labo-traceability.py install --repo "$PWD" --apply`.
+<!-- /labo-traceability -->
